@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Structure</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ==========================
+       1. Import all fonts
+    ========================== */
+    @font-face {
+      font-family: 'MontserratBoldItalic';
+      src: url('fonts/Montserrat-BoldItalic.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratExtraBold';
+      src: url('fonts/Montserrat-ExtraBold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratExtraBoldItalic';
+      src: url('fonts/Montserrat-ExtraBoldItalic.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratLight';
+      src: url('fonts/Montserrat-Light.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratMediumItalic';
+      src: url('fonts/Montserrat-MediumItalic.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratRegular';
+      src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratSemiBold';
+      src: url('fonts/Montserrat-SemiBold.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratSemiBoldItalic';
+      src: url('fonts/Montserrat-SemiBoldItalic.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratThin';
+      src: url('fonts/Montserrat-Thin.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'MontserratThinItalic';
+      src: url('fonts/Montserrat-ThinItalic.ttf') format('truetype');
+    }
+
+    @font-face {
+      font-family: 'PoppinsSemiBold';
+      src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+    }
+
+    /* ==========================
+       2. Classes for easy use
+    ========================== */
+    .bolditalic { font-family: 'MontserratBoldItalic', sans-serif; }
+    .extrabold { font-family: 'MontserratExtraBold', sans-serif; }
+    .extrabolditalic { font-family: 'MontserratExtraBoldItalic', sans-serif; }
+    .light { font-family: 'MontserratLight', sans-serif; }
+    .mediumitalic { font-family: 'MontserratMediumItalic', sans-serif; }
+    .regular { font-family: 'MontserratRegular', sans-serif; }
+    .semibold { font-family: 'MontserratSemiBold', sans-serif; }
+    .semibolditalic { font-family: 'MontserratSemiBoldItalic', sans-serif; }
+    .thin { font-family: 'MontserratThin', sans-serif; }
+    .thinitalic { font-family: 'MontserratThinItalic', sans-serif; }
+    .poppins { font-family: 'PoppinsSemiBold', sans-serif; }
+    
+    body{
+background: #000000;
+padding: 0;
+margin: 0;
+color: white;
+}
+
+h2{
+color: #D9D9D9;
+font-weight: normal;
+
+}
+
+.username{
+width: 80%;
+height: 30px;
+background-color: inherit;
+border: none;
+border: white solid 1px;
+border-radius: 20px;
+font-size: 16px;
+text-align: center;
+position: absolute;
+right: 25px;
+bottom: 220px;
+color: white;
+
+}
+
+
+.password{
+width: 80%;
+height: 30px;
+background-color: inherit;
+border: none;
+border: white solid 1px;
+border-radius: 20px;
+font-size: 16px;
+text-align: center;
+position: absolute;
+right: 25px;
+top: 25px;
+color: white;
+
+}
+
+form{
+color: white;
+margin-top: 16px;
+font-weight: bold;
+font-size: 15px;
+text-align: center;
+}
+
+#lock{
+color: white;
+position: relative;
+margin-top: 40px;
+
+}
+
+
+img{
+position: absolute;
+left: 140px;
+top: 15px;
+
+}
+
+#login{
+position: absolute;
+bottom: 120px;
+background-color: inherit;
+color: white;
+border: solid 1px white;
+text-align: center;
+width: 80%;
+right: 30px;
+height: 35px;
+bottom: 100px;
+border-radius: 15px;
+background-color: #0F68F4;
+border: none;
+}
+
+#rigister{
+color: #000000;
+position: absolute;
+bottom: 60px;
+background-color: inherit;
+border: white 1px solid;
+width: 80%;
+height: 30px;
+left: 25px;
+border-radius: 15px;
+top: 270px;
+font-weight: normal;
+background: white;
+
+}
+
+
+
+
+.card{
+width: 90%;
+height: 350px;
+border: white solid 1px;
+position: relative;
+text-align: center;
+left: 15px;
+top: 100px;
+border-radius: 20px;
+background-color: #000000;
+}
+
+@property --angle{
+ syntax: "<angle>";
+ initial-value: 0deg;
+ inherits: false;
+}
+
+.card::after, .card::before{
+content: '';
+height: 100%;
+width: 100%;
+position: absolute;
+background-image: conic-gradient(from var(--angle), transparent 10%, #0BB5FF);
+top: 50%;
+left: 50%;
+translate: -50% -50%;
+z-index: -1;
+border-radius: 20px;
+padding: 4px;
+animation: 3s spin linear infinite;
+
+}
+.card::before{
+filter: blur(1.5rem);
+opacity: 0.5;
+}
+
+@keyframes spin{
+from{
+--angle: 0deg;
+}
+to{
+--angle: 360deg;
+}
+
+{
+ 
+
+    </style>
+    </head>
+    <body>
+  <center>
+      <img src="logo_icon.JPG" width="50px">
+      </center>
+        
+      
+      <div class="card">
+        <h2 class="poppins">LOGIN ?</h2>
+        
+        
+ <form class="thin">
+   Username
+   <input class="username" type="username" name="username">
+ </form>
+ <form class="thin" id="lock">
+   Password
+   <input class="password" type="password" name="password">
+ </form>
+ 
+ <button class="poppins" id="login">Login</button>
+ 
+ <button class="poppins" id="rigister">Rigister?</button>
+      </div>
+    </body>
+   </html>
